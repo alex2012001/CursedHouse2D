@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":5.557223320007324,"y":0.6205487847328186,"z":-6.015886306762695},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":4.181798458099365,"orthographic":true}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":4.065251350402832,"y":3.2705161571502687,"z":-0.5185546875},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":8.023529052734375,"orthographic":true}
+>>>>>>> remotes/origin/Aleksei

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class EndLevel : MonoBehaviour
 {
-    bool f = false;
+    public LevelController lvl;
 
-
-    public void ifWeEndLevel()
+    public void Start()
     {
-        if(f == true) //условие для переключения уровня
-        {
-            LevelController.insctance.isEndGame();
-        }
+        lvl.isEndGame();
+      
     }
 
-    
+   
+
+   
+
 }

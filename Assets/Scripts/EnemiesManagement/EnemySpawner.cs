@@ -55,7 +55,6 @@ public class EnemySpawner : MonoBehaviour
                 fly--;
             }
         }
-        Debug.Log(walk + " ************");
         while (walk > 0)
         {
             int r = Random.Range(1, 7);

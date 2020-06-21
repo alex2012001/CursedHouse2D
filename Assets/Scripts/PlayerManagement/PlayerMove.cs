@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
 {
     public Rigidbody2D rb;
 
-   
+    public bool canMove;
     public int playerOnLadder = 0;
 
     //private Inventory inventory;
@@ -15,8 +15,9 @@ public class PlayerMove : MonoBehaviour
 
     private Joystick joystick;
 
+    public GameObject canvasStunText;
 
-    private bool facingRight = true; // Отслеживание поворота персонажа (изначально он смотрит направо)
+    public bool facingRight; // Отслеживание поворота персонажа (изначально он смотрит направо)
 
     public  float speedX; // Текущая скорость персонажа
 
@@ -45,6 +46,8 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
+        facingRight = true;
+        canMove = true;
         joystick = GameObject.FindGameObjectWithTag("joystick").GetComponent<Joystick>();
         rb = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
@@ -53,41 +56,40 @@ public class PlayerMove : MonoBehaviour
     private void FixedUpdate()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position,checkRadius,whatIsGround); // Проверка находится ли игрок на земле
-        transform.Translate(speedX,0, 0); // Постоянное перемещение персонажа по оси x со скоростью speedX
+        if (canMove)
+        {
+            transform.Translate(speedX, 0, 0); // Постоянное перемещение персонажа по оси x со скоростью speedX
 
             speedX = joystick.Horizontal();
             if (joystick.Vertical() > 0.3)
             {
                 playerOnLadder = 1;
-               
+
             }
             else if (joystick.Vertical() < -0.3)
             {
                 playerOnLadder = -1;
-               
-        }
+
+            }
             else
             {
                 playerOnLadder = 0;
-               
+
             }
-        
-            if(joystick.Horizontal() != 0)
+
+            if (joystick.Horizontal() != 0)
             {
                 Anim.SetBool("Run", true);
             }
             else
             {
-               Anim.SetBool("Run", false);
+                Anim.SetBool("Run", false);
             }
-    }
-
-
-
-    public void Flip() // Поворот персонажа, а также попорот направления оси x
-    {
-        facingRight = !facingRight;
-        transform.Rotate(0f, 180f, 0f);
+        }
+        if (!canMove)
+        {
+            Anim.SetBool("Run", false);
+        }
     }
 
     public void Jump() // Функция прыжка при нажатии на клавишу

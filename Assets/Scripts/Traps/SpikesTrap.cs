@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class SpikesTrap : MonoBehaviour
@@ -80,6 +81,8 @@ public class SpikesTrap : MonoBehaviour
         clickForReloadTime = 0;
     }
 
+
+
     IEnumerator SpikeDamage()
     {
         anim.SetBool("takeDamage", true);
@@ -92,5 +95,4 @@ public class SpikesTrap : MonoBehaviour
         anim.SetBool("takeDamage", false);
         yield return null;
     }
-
 }

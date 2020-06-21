@@ -74,6 +74,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler,IDragHandler,IPointer
     }
     public void Flip()
     {
+        plMove.canvasStunText.transform.Rotate(0f, 180f, 0f);
         facingRight = !facingRight;
         plMove.transform.Rotate(0f, 180f, 0f);
     }

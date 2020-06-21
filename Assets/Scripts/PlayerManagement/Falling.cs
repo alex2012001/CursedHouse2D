@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Falling : MonoBehaviour
 {
+
+    public GameObject rightStunText;
+
     public static bool fallCheck = true;
     private PlayerMove pl;
     private void Start()
@@ -20,13 +23,29 @@ public class Falling : MonoBehaviour
                 Debug.Log(pl.rb.velocity.y);
             }
 
-            if (collision.gameObject.tag.Equals("Ground") && pl.rb.velocity.y < -6)
+            if (collision.gameObject.tag.Equals("Ground") && pl.rb.velocity.y < -5)
+            {
+                StartCoroutine(Stun());
+            }
+            if (collision.gameObject.tag.Equals("Ground") && pl.rb.velocity.y < -7.5)
             {
                 pl.healthFill -= 0.25f;
-                Debug.Log("Damage");
+            }
+            if (collision.gameObject.tag.Equals("Ground") && pl.rb.velocity.y < -10)
+            {
+                pl.healthFill -= 0.25f;
             }
         }
     }
-
+  
+    IEnumerator Stun()
+    {
+        rightStunText.SetActive(true);
+        pl.canMove = false;
+        yield return new WaitForSeconds(1.5f);
+        pl.canMove = true;
+        rightStunText.SetActive(false);
+        yield return null;
+    }
 
 }

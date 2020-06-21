@@ -10,10 +10,12 @@ public class EnemyHealthPoints : MonoBehaviour
 
     public Image healthBar;
 
+    private EnemyCost enemyCost;
     private AIPath path;
 
     private void Start()
     {
+        enemyCost = GetComponent<EnemyCost>();
         path = GetComponent<AIPath>();
     }
     void Update()
@@ -21,17 +23,11 @@ public class EnemyHealthPoints : MonoBehaviour
         healthBar.fillAmount = hp;
         if (hp <= 0.01)
         {
+            enemyCost.CrystalSpawn();
             Destroy(gameObject);
         }
 
 
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //if (collision.gameObject.tag == "Arrow")
-        //{
-        //    hp -= 0.2f;
-        //}
     }
 
     public void TakeDamage(float damage)

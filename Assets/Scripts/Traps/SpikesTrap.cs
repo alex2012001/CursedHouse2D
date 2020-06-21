@@ -24,7 +24,7 @@ public class SpikesTrap : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" && collision.isTrigger == false&&isActive)
+        if (collision.gameObject.tag == "Enemy" && collision.isTrigger == false&&isActive || collision.gameObject.tag == "FlyingEnemy" && collision.isTrigger == false)
         {
             enemyHp = collision.GetComponent<EnemyHealthPoints>();
             StartCoroutine(SpikeDamage());
@@ -38,7 +38,7 @@ public class SpikesTrap : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" && collision.isTrigger == false)
+        if (collision.gameObject.tag == "Enemy" && collision.isTrigger == false || collision.gameObject.tag == "FlyingEnemy" && collision.isTrigger == false)
         {
             enemyHp = null;
         }

@@ -20,7 +20,7 @@ public class BladeTrap : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" && collision.isTrigger == false)
+        if (collision.gameObject.tag == "Enemy" && collision.isTrigger == false||collision.gameObject.tag=="FlyingEnemy"&&collision.isTrigger==false)
         {
             enemyHp = collision.gameObject.GetComponent<EnemyHealthPoints>();
             StartCoroutine(TakeDamage());

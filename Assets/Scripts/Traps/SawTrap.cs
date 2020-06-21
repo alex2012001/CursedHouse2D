@@ -14,7 +14,7 @@ public class SawTrap : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" && collision.isTrigger == false)
+        if (collision.gameObject.tag == "Enemy" && collision.isTrigger == false || collision.gameObject.tag == "FlyingEnemy" && collision.isTrigger == false)
         {
             enemyHp = collision.GetComponent<EnemyHealthPoints>();
             enemyHp.hp -= damage;

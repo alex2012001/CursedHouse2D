@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 2964044613213421525}
   - component: {fileID: 2964044613213421524}
   - component: {fileID: 2964044613213421527}
+  - component: {fileID: 114888193405667006}
   m_Layer: 9
   m_Name: Goblin
   m_TagString: Enemy
@@ -219,7 +220,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2964044613213421520}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.508962, y: -0.68741393, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 2964044612750155993}
@@ -428,6 +429,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   healthBar: {fileID: 2964044614733942613}
+--- !u!114 &114888193405667006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2964044613213421520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3384ed61fca92f04c95afc7792dbcbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crystal: {fileID: 8416635983465287882, guid: 64a18b2f611bd324eafd8c91ba74d33f, type: 3}
+  crystalCount: 5
 --- !u!1 &2964044614591390062
 GameObject:
   m_ObjectHideFlags: 0

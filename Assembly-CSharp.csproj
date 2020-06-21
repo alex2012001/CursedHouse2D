@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Arrow.cs" />
     <Compile Include="Assets\Scripts\CharacterChoice\CharacterChoice.cs" />
     <Compile Include="Assets\Scripts\CharacterChoice\CharacterSpawn.cs" />
+    <Compile Include="Assets\Scripts\EnemiesManagement\EnemyCost.cs" />
     <Compile Include="Assets\Scripts\EnemiesManagement\EnemyDrop.cs" />
     <Compile Include="Assets\Scripts\EnemiesManagement\EnemyHealthPoints.cs" />
     <Compile Include="Assets\Scripts\EnemiesManagement\EnemySpawner.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Assets\Scripts\MenuMenegment.cs" />
     <Compile Include="Assets\Scripts\PauseMenu\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\Attack.cs" />
+    <Compile Include="Assets\Scripts\PlayerManagement\Crystal.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\CrystalsCounter.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\Falling.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\HealthBar.cs" />

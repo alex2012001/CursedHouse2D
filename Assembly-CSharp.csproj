@@ -96,6 +96,8 @@
     <Compile Include="Assets\Scripts\PlayerManagement\PlayerCrystals.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\Shooting.cs" />
+    <Compile Include="Assets\Scripts\Traps\BladeSpawnTrap.cs" />
+    <Compile Include="Assets\Scripts\Traps\BladeTrap.cs" />
     <Compile Include="Assets\Scripts\Traps\BuySpace.cs" />
     <Compile Include="Assets\Scripts\Traps\SawTrap.cs" />
     <Compile Include="Assets\Scripts\Traps\SpikesTrap.cs" />

@@ -34,6 +34,7 @@ public class PlayerCrystals : MonoBehaviour
     {
         if(buy&&checkOnBuy&&count>=buySpace.cost)
         {
+            
             if (buySpace.progressBar != null)
             {
                 buySpace.progressBar.fillAmount = clickTime * 0.25f;

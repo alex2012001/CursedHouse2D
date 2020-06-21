@@ -41,6 +41,7 @@ public class BuySpace : MonoBehaviour
 
     public void Build()
     {
+        Debug.Log("Build");
         if (playerCrystals.count >= cost&&!isBuild)
         {
             isBuild = true;

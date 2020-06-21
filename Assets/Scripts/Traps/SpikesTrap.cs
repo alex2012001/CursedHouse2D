@@ -77,6 +77,7 @@ public class SpikesTrap : MonoBehaviour
     {
         isActive = true;
         reloadProgress.fillAmount = 0f;
+        clickForReloadTime = 0;
     }
 
     IEnumerator SpikeDamage()

@@ -8,7 +8,7 @@ public class EndLevel : MonoBehaviour
 
     public void Start()
     {
-        lvl.isEndGame();
+       // lvl.isEndGame();
       
     }
 

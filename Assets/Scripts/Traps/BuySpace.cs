@@ -41,12 +41,12 @@ public class BuySpace : MonoBehaviour
 
     public void Build()
     {
-        Debug.Log("Построил");
         if (playerCrystals.count >= cost&&!isBuild)
         {
             isBuild = true;
             Destroy(Arrow);
             Destroy(Cost);
+            Destroy(progressBar);
             playerCrystals.count -= cost;
             Trap.SetActive(true);
         }

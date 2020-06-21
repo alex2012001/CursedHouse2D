@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerCrystals : MonoBehaviour
 {
-    public int count = 1;
+    public int count;
 
     private BuySpace buySpace;
     private bool buy = false;
@@ -32,9 +32,12 @@ public class PlayerCrystals : MonoBehaviour
 
     private void Update()
     {
-        if(buy&&checkOnBuy)
+        if(buy&&checkOnBuy&&count>=buySpace.cost)
         {
-            buySpace.progressBar.fillAmount = clickTime * 0.25f;
+            if (buySpace.progressBar != null)
+            {
+                buySpace.progressBar.fillAmount = clickTime * 0.25f;
+            }
             gameTime += 1*Time.deltaTime;
             if (gameTime >= 1)
             {
@@ -45,19 +48,14 @@ public class PlayerCrystals : MonoBehaviour
             {
                 buySpace.Build();
             }
-            Debug.Log(clickTime);
         }
         if (!checkOnBuy&&buy)
         {
             clickTime = 0;
-            buySpace.progressBar.fillAmount = 0;
+            if (buySpace.progressBar != null)
+            {
+                buySpace.progressBar.fillAmount = 0;
+            }
         }
     }
-    //public void Buy()
-    //{
-    //    if (buy)
-    //    {
-    //        buySpace.Build();
-    //    }
-    //}
 }

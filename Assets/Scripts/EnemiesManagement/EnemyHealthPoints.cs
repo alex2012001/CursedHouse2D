@@ -38,10 +38,11 @@ public class EnemyHealthPoints : MonoBehaviour
     {
         if (path.canMove)
         {
+            float buf = hp;
             hp -= damage;
             if (hp <= 0)
             {
-                hp = 0.2f;
+                hp = buf;
             }
             StartCoroutine(StunTime());
         }

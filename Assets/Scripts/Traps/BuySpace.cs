@@ -10,6 +10,7 @@ public class BuySpace : MonoBehaviour
     public GameObject Cost;
     public GameObject Arrow;
     public int cost;
+    public GameObject ghost;
 
     private bool isBuild = false;
     public int buildTime = 4;
@@ -45,6 +46,7 @@ public class BuySpace : MonoBehaviour
         if (playerCrystals.count >= cost&&!isBuild)
         {
             isBuild = true;
+            Destroy(ghost);
             Destroy(Arrow);
             Destroy(Cost);
             Destroy(progressBar);

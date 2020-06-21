@@ -18,10 +18,10 @@ public class Falling : MonoBehaviour
     {
         if (fallCheck)
         {
-            if (collision.gameObject.tag.Equals("Ground"))
-            {
-                Debug.Log(pl.rb.velocity.y);
-            }
+            //if (collision.gameObject.tag.Equals("Ground"))
+            //{
+            //    Debug.Log(pl.rb.velocity.y);
+            //}
 
             if (collision.gameObject.tag.Equals("Ground") && pl.rb.velocity.y < -5)
             {

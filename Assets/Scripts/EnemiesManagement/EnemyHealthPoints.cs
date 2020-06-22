@@ -13,8 +13,12 @@ public class EnemyHealthPoints : MonoBehaviour
     private EnemyCost enemyCost;
     private AIPath path;
 
+    private EnemySpawner enemySpawner;
+
     private void Start()
     {
+        enemySpawner = GameObject.Find("A*").GetComponent<EnemySpawner>();
+        enemySpawner.enemyCount++;
         enemyCost = GetComponent<EnemyCost>();
         path = GetComponent<AIPath>();
     }
@@ -24,6 +28,7 @@ public class EnemyHealthPoints : MonoBehaviour
         if (hp <= 0.01)
         {
             enemyCost.CrystalSpawn();
+            enemySpawner.enemyCount--;
             Destroy(gameObject);
         }
 

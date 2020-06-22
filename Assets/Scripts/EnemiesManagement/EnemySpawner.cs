@@ -15,7 +15,17 @@ public class EnemySpawner : MonoBehaviour
     private int waveNumber = 1;
     public bool newWaveSpawn=false;
 
-   
+    public int enemyCount;
+    public bool allDie;
+
+    private void Awake()
+    {
+        enemyCount = 0;
+    }
+    private void Start()
+    {
+        allDie = false;
+    }
 
     void Update()
     {
@@ -23,13 +33,20 @@ public class EnemySpawner : MonoBehaviour
         {
             EnemySpawn();
         }
-        if (waveNumber == 3)
+        if (waveNumber == 3 && enemyCount == 0)
         {
-            waveNumber = 1;
+            StartCoroutine(Wait());
         }
 
 
 
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(3);
+        allDie = true;
+        yield return null;
     }
 
     private void EnemySpawn()

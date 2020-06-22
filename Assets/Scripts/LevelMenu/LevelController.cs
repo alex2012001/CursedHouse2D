@@ -19,7 +19,6 @@ public class LevelController : MonoBehaviour
         PlayerPrefs.SetInt("LevelComplete", 2); //убрать в финальном билде
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         levelComplete = PlayerPrefs.GetInt("LevelComplete");
-       // sceneIndex = levelComplete++;
 
         Debug.Log(levelComplete);
         Debug.Log(sceneIndex);
@@ -38,7 +37,6 @@ public class LevelController : MonoBehaviour
         {
             if(levelComplete < sceneIndex)
             {
-                Debug.Log("AAAAAAAAAA");
                 PlayerPrefs.SetInt("LevelComplete", sceneIndex);
                 NextLevel();
             }

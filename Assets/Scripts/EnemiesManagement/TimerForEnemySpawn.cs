@@ -10,18 +10,20 @@ public class TimerForEnemySpawn : MonoBehaviour
 
     public EnemySpawner enemyspawn;
 
+    private int waveNumber = 1;
+    public bool AllWaves;
+
     [Header("Осталось времени")]
-    public int timeLeftForDay = 60;
-    public int timeLeftForNight = 180;
+    public int timeLeftForNight = 60;
     private int timeLeft;
     private float gameTime;
     private bool day = true;
     private bool newWaves = false;
     private void Start()
     {
-        timeLeft = timeLeftForDay;
+        AllWaves = false;
+        timeLeft = timeLeftForNight;
         myText.color = Color.white;
-       // StartCoroutine(EnemySpawn());
     }
     void Update()
     {
@@ -53,7 +55,7 @@ public class TimerForEnemySpawn : MonoBehaviour
                 StartCoroutine(EnemySpawn());
                 newWaves = false;
             }
-            myText.text = "До наступления дня осталось " + timeLeft + " сек";
+            myText.text = "До следующей волны " + timeLeft + " сек";
             gameTime += 1 * Time.deltaTime;
             if (gameTime >= 1)
             {
@@ -61,11 +63,14 @@ public class TimerForEnemySpawn : MonoBehaviour
                 gameTime = 0;
             }
 
-            if (timeLeft == 0)
+            if (timeLeft == 0&&waveNumber<3)
             {
-                day = true;
-                timeLeft = timeLeftForDay;
-                myText.color = Color.white;
+                timeLeft = 60;
+                waveNumber++;
+            }
+            else if(waveNumber>=3)
+            {
+                myText.text = "Убейте всех монстров чтобы выйграть";
             }
         }
     }
@@ -77,6 +82,7 @@ public class TimerForEnemySpawn : MonoBehaviour
         enemyspawn.newWaveSpawn = true;
         yield return new WaitForSeconds(60);
         enemyspawn.newWaveSpawn = true;
+        AllWaves = true;
         yield return null;
     }
 }

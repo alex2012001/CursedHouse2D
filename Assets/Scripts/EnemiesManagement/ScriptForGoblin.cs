@@ -7,7 +7,6 @@ public class ScriptForGoblin : MonoBehaviour
 {
     private Rigidbody2D rb;
     public AIPath path;
-   // private int hp = 5;
     private bool pathFinding = false;
     void Start()
     {
@@ -16,12 +15,6 @@ public class ScriptForGoblin : MonoBehaviour
 
     void Update()
     {
-        
-
-        //if (hp == 0)
-        //{
-        //    Destroy(gameObject);
-        //}
         
         if (!path.canMove)
         {
@@ -32,13 +25,6 @@ public class ScriptForGoblin : MonoBehaviour
             rb.gravityScale = 1;
             pathFinding = true;
         }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //if (collision.gameObject.tag == "Arrow")
-        //{
-        //    hp--;
-        //}
     }
     
 

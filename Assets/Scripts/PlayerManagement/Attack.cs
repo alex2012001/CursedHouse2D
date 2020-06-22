@@ -32,7 +32,7 @@ public class Attack : MonoBehaviour
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPose.position,attackRange,whatIsEnemy);
                 for(int i = 0; i < enemiesToDamage.Length; i++)
                 {
-                    enemiesToDamage[i].GetComponent<EnemyHealthPoints>().TakeDamage(damage);
+                    enemiesToDamage[i].transform.parent.GetComponent<EnemyHealthPoints>().TakeDamage(damage);
                 }
                 check = false;
             }
@@ -69,9 +69,6 @@ public class Attack : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         Anim.SetBool("Atack", false);
         yield return new WaitForSeconds(0.2f);
-        
         checkAnim = true;
-
-
     }
 }

@@ -16,6 +16,9 @@ public class SpikesTrap : MonoBehaviour
     private float gameTime;
     public Image reloadProgress;
 
+
+    public GameObject needToReload;
+
     private Animator anim;
 
     private void Start()
@@ -76,23 +79,32 @@ public class SpikesTrap : MonoBehaviour
 
     private void Reload()
     {
+        StartCoroutine(Anim());
+        needToReload.SetActive(false);
         isActive = true;
         reloadProgress.fillAmount = 0f;
         clickForReloadTime = 0;
     }
 
-
+    IEnumerator Anim()
+    {
+        anim.SetInteger("trap", 3);
+        yield return new WaitForSecondsRealtime(0.5f);
+        anim.SetInteger("trap", 4);
+        yield return null;
+    }
 
     IEnumerator SpikeDamage()
     {
-        anim.SetBool("takeDamage", true);
+        anim.SetInteger("trap", 1);
         yield return new WaitForSeconds(0.5f);
         if (enemyHp != null)
         {
             enemyHp.hp -= damage;
         }
         yield return new WaitForSeconds(0.5f);
-        anim.SetBool("takeDamage", false);
+        anim.SetInteger("trap", 2);
+        needToReload.SetActive(true);
         yield return null;
     }
 }

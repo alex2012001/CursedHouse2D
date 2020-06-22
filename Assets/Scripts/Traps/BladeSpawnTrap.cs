@@ -14,6 +14,8 @@ public class BladeSpawnTrap : MonoBehaviour
     private float gameTime;
     private int reloadTime = 3;
     private int clickForReloadTime=0;
+
+    public GameObject needToReload;
     private void Start()
     {
         Instantiate(blade,transform);
@@ -58,10 +60,15 @@ public class BladeSpawnTrap : MonoBehaviour
                 reloadProgress.fillAmount = 0f;
             }
         }
+        if (!isReload)
+        {
+            needToReload.SetActive(true);
+        }
     }
 
     private void Reload()
     {
+        needToReload.SetActive(false);
         isReload = true;
         Instantiate(blade, transform);
         clickForReloadTime = 0;

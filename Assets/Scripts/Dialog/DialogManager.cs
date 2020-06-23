@@ -9,18 +9,23 @@ public class DialogManager : MonoBehaviour
     public Text dialogText;
 
     public Animator anim;
+    public GameObject timer;
+
+    private int kek;
 
     private Queue<string> sentances;
 
     void Start()
     {
         sentances = new Queue<string>();
-        
+        kek = 0;
     }
 
     public void StartDialog(Dialog dialog)
     {
         anim.SetBool("isOne", true);
+
+       
 
         Debug.Log("Talk to " + dialog.name);
 
@@ -62,8 +67,15 @@ public class DialogManager : MonoBehaviour
 
     public void EndDialog()
     {
+
         Debug.Log("End");
+        kek++;
         anim.SetBool("isOne", false);
+        if(kek == 2)
+        {
+            timer.SetActive(true);
+        }
+     
     }
 
 }

@@ -7,6 +7,7 @@ public class CrystalsCounter : MonoBehaviour
 {
     private PlayerCrystals playerCrystals;
     public Text text;
+    public int countForTrigger;
     void Start()
     {
         text.color = Color.white;
@@ -16,5 +17,6 @@ public class CrystalsCounter : MonoBehaviour
     void Update()
     {
         text.text = "X "+ playerCrystals.count;
+        countForTrigger = playerCrystals.count;
     }
 }

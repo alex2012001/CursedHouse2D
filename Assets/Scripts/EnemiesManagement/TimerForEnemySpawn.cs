@@ -19,11 +19,19 @@ public class TimerForEnemySpawn : MonoBehaviour
     private float gameTime;
     private bool day = true;
     private bool newWaves = false;
+
+   
     private void Start()
     {
         AllWaves = false;
         timeLeft = timeLeftForNight;
         myText.color = Color.white;
+       
+    }
+
+    private void Awake()
+    {
+        
     }
     void Update()
     {

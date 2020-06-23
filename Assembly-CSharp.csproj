@@ -66,9 +66,6 @@
     <Compile Include="Assets\Scripts\Arrow.cs" />
     <Compile Include="Assets\Scripts\CharacterChoice\CharacterChoice.cs" />
     <Compile Include="Assets\Scripts\CharacterChoice\CharacterSpawn.cs" />
-    <Compile Include="Assets\Scripts\Dialog\Dialog.cs" />
-    <Compile Include="Assets\Scripts\Dialog\DialogManager.cs" />
-    <Compile Include="Assets\Scripts\Dialog\DialogTrigger.cs" />
     <Compile Include="Assets\Scripts\EnemiesManagement\EnemyCost.cs" />
     <Compile Include="Assets\Scripts\EnemiesManagement\EnemyDrop.cs" />
     <Compile Include="Assets\Scripts\EnemiesManagement\EnemyHealthPoints.cs" />

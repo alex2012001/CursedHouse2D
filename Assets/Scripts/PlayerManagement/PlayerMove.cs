@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    private bool checkDamage = true;
+    private SpriteRenderer spriteRend;
+
     public Rigidbody2D rb;
 
     public bool canMove;
     public int playerOnLadder = 0;
 
-    //private Inventory inventory;
-    //[SerializeField] private UI_Inventory uiinventory;
+    
 
     private Joystick joystick;
 
@@ -37,11 +39,6 @@ public class PlayerMove : MonoBehaviour
     private void Awake()
     {
         healthFill = 1f;
-        //inventory = new Inventory();
-        //uiinventory.SetInventory(inventory);
-        //ItemWorld.SpawnItemWorld(new Vector3(20, 20), new Item { itemType = Item.ItemType.Bow, amount = 1 });
-        //ItemWorld.SpawnItemWorld(new Vector3(-20, 20), new Item { itemType = Item.ItemType.Armor, amount = 1 });
-        //ItemWorld.SpawnItemWorld(new Vector3(0, 20), new Item { itemType = Item.ItemType.Jacket, amount = 1 });
     }
 
     void Start()
@@ -51,6 +48,7 @@ public class PlayerMove : MonoBehaviour
         joystick = GameObject.FindGameObjectWithTag("joystick").GetComponent<Joystick>();
         rb = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
+        spriteRend = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -117,10 +115,44 @@ public class PlayerMove : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy"|| collision.gameObject.tag=="FlyingEnemy")
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "FlyingEnemy")
         {
-            healthFill -= 0.25f;
+            if (checkDamage)
+            {
+                checkDamage = false;
+                healthFill -= 0.25f;
+                //if (spriteRend == null)
+                //{
+                //    Debug.Log("AAAAAAAAAAAA");
+                //}
+                //spriteRend.color = new Color(255f, 255f, 255f, 0f);
+                StartCoroutine(Damage());
+            }
         }
+    }
+
+    IEnumerator Damage()
+    {
+        for (int i = 0; i < 3; i++) 
+        { 
+        spriteRend.color = new Color(255f, 255f, 255f, 0.9f);
+        yield return new WaitForSeconds(0.1f);
+        spriteRend.color = new Color(255f, 255f, 255f, 0.7f);
+        yield return new WaitForSeconds(0.1f);
+        spriteRend.color = new Color(255f, 255f, 255f, 0.5f);
+        yield return new WaitForSeconds(0.1f);
+        spriteRend.color = new Color(255f, 255f, 255f, 0.3f);
+        yield return new WaitForSeconds(0.1f);
+        spriteRend.color = new Color(255f, 255f, 255f, 0.5f);
+        yield return new WaitForSeconds(0.1f);
+        spriteRend.color = new Color(255f, 255f, 255f, 0.7f);
+        yield return new WaitForSeconds(0.1f);
+        spriteRend.color = new Color(255f, 255f, 255f, 0.9f);
+        yield return new WaitForSeconds(0.1f);
+        }
+        spriteRend.color = new Color(255f, 255f, 255f, 1f);
+        checkDamage = true;
+        yield return null;
     }
 
     IEnumerator MyMethodForJump()

@@ -11,6 +11,9 @@ public class FollowPath : MonoBehaviour
         Lerping
     }
 
+    private bool alertIsActive = false;
+    public GameObject alert;
+
     private AIPath path;
 
     private bool facingRight = true;
@@ -105,6 +108,19 @@ public class FollowPath : MonoBehaviour
         {
             Persecution = true;
             path.canMove = true;
+            if (!alertIsActive)
+            {
+                alertIsActive = true;
+                StartCoroutine(Alert());
+            }
         }
+    }
+
+    IEnumerator Alert()
+    {
+        alert.SetActive(true);
+        yield return new WaitForSeconds(2);
+        alert.SetActive(false);
+        yield return null;
     }
 }

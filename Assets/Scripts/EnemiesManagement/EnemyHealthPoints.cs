@@ -25,7 +25,7 @@ public class EnemyHealthPoints : MonoBehaviour
     void Update()
     {
         healthBar.fillAmount = hp;
-        if (hp <= 0.01)
+        if (hp <= 0)
         {
             enemyCost.CrystalSpawn();
             enemySpawner.enemyCount--;

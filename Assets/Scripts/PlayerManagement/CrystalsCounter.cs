@@ -16,10 +16,5 @@ public class CrystalsCounter : MonoBehaviour
     void Update()
     {
         text.text = "X "+ playerCrystals.count;
-
-        if(playerCrystals.count == 3)
-        {
-
-        }
     }
 }

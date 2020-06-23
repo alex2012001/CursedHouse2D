@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":-2.0366756916046144,"y":3.5683186054229738,"z":-1.1822761297225953},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":19.351696014404298,"orthographic":true}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":2.761810779571533,"y":0.5359501242637634,"z":-23.474609375},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":11.288654327392579,"orthographic":true}
+>>>>>>> parent of 9a994224... Сделал шаблон под диалоговую систему

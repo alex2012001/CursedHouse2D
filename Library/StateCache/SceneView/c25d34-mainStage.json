@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":37.41798782348633,"y":9.387272834777832,"z":4.37109375},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":9.552909851074219,"orthographic":true}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":37.64570617675781,"y":7.759267330169678,"z":4.3870849609375},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":7.8113932609558109,"orthographic":true}
+>>>>>>> parent of 783f57d5... Добавление триггеров в процессе

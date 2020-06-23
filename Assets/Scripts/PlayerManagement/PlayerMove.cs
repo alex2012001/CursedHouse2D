@@ -59,8 +59,14 @@ public class PlayerMove : MonoBehaviour
         if (canMove)
         {
             transform.Translate(speedX, 0, 0); // Постоянное перемещение персонажа по оси x со скоростью speedX
-
-            speedX = joystick.Horizontal();
+            if (joystick.Horizontal() > 0.02)
+            {
+                speedX = joystick.Horizontal();
+            }
+            else
+            {
+                speedX = 0;
+            }
             if (joystick.Vertical() > 0.3)
             {
                 playerOnLadder = 1;
@@ -77,7 +83,7 @@ public class PlayerMove : MonoBehaviour
 
             }
 
-            if (joystick.Horizontal() != 0)
+            if (joystick.Horizontal() >0.02)
             {
                 Anim.SetBool("Run", true);
             }
@@ -100,6 +106,7 @@ public class PlayerMove : MonoBehaviour
             }
             if (extraJumps > 0) // Имитация прыжка персонажа при помощи импульса направленного вверх
             {
+                
                 Anim.SetBool("Jump", true);
                 rb.velocity = Vector2.up * verticalImpulse;
                 extraJumps--;

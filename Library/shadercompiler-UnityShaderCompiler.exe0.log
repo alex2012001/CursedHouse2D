@@ -1,20 +1,3 @@
 Base path: C:/Program Files/Unity/Hub/Editor/2018.4.20f1/Editor/Data
 Cmd: initializeCompiler
-<<<<<<< HEAD
-=======
-Cmd: preprocess
-  insize=708 outsize=708 ok=1
-Cmd: preprocess
-  insize=883 outsize=883 ok=1
-Cmd: preprocess
-  insize=2706 outsize=487 ok=1
-Cmd: preprocess
-  insize=2309 outsize=864 ok=1
 Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
->>>>>>> parent of 783f57d5... Добавление триггеров в процессе

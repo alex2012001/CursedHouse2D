@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour
     public Transform[] SpawnpointsForFlying;
     public Transform[] SpawnpointsForWalking;
 
-
+    int[] waves = new int[3];
     private int waveNumber = 1;
     public bool newWaveSpawn=false;
 
@@ -20,6 +20,9 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
+        waves[0] = 2;
+        waves[1] = 3;
+        waves[2] = 4;
         enemyCount = 0;
     }
     private void Start()
@@ -29,11 +32,11 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if (waveNumber < 3 && newWaveSpawn)
+        if (waveNumber < 4 && newWaveSpawn)
         {
             EnemySpawn();
         }
-        if (waveNumber == 3 && enemyCount == 0)
+        if (waveNumber == 4 && enemyCount == 0)
         {
             StartCoroutine(Wait());
         }
@@ -52,8 +55,8 @@ public class EnemySpawner : MonoBehaviour
     private void EnemySpawn()
     {
         int [] exceptionArray = new int[6];
-        int fly = Random.Range(1, waveNumber * 2+1);
-        int walk = waveNumber * 2 - fly;
+        int fly = Random.Range(1, waves[waveNumber-1]);
+        int walk = waves[waveNumber-1] - fly;
         while (fly > 0)
         {
             int r = Random.Range(1, 7);

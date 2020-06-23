@@ -44,7 +44,7 @@ public class TimerForEnemySpawn : MonoBehaviour
             {
                 day = false;
                 myText.color = Color.red;
-                timeLeft = timeLeftForNight;
+                timeLeft = 90;
                 newWaves = true;
             }
         }
@@ -65,7 +65,7 @@ public class TimerForEnemySpawn : MonoBehaviour
 
             if (timeLeft == 0&&waveNumber<3)
             {
-                timeLeft = 60;
+                timeLeft = 90;
                 waveNumber++;
             }
             else if(waveNumber>=3)
@@ -78,9 +78,9 @@ public class TimerForEnemySpawn : MonoBehaviour
         IEnumerator EnemySpawn()
     {
         enemyspawn.newWaveSpawn = true;
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(90);
         enemyspawn.newWaveSpawn = true;
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(90);
         enemyspawn.newWaveSpawn = true;
         AllWaves = true;
         yield return null;

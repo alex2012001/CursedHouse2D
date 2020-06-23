@@ -559,7 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crystal: {fileID: 8416635983465287882, guid: 64a18b2f611bd324eafd8c91ba74d33f, type: 3}
-  crystalCount: 2
+  crystalCount: 1
 --- !u!1 &8535587633557418341
 GameObject:
   m_ObjectHideFlags: 0

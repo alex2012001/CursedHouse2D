@@ -12,6 +12,7 @@ public class BuySpace : MonoBehaviour
     public int cost;
     public GameObject ghost;
 
+
     private bool isBuild = false;
     public int buildTime = 4;
     public Image progressBar;

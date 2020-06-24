@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.Audio;
+using Pathfinding;
 public class TimerForEnemySpawn : MonoBehaviour
 {
     [Header("Индикатор")]
@@ -20,9 +21,15 @@ public class TimerForEnemySpawn : MonoBehaviour
     private bool day = true;
     private bool newWaves = false;
 
-   
+    public AudioSource dayMusic;
+    public AudioSource nightMusic;
+    public EnemySpawner enemySpawner;
+    private bool trigger =false;
+
     private void Start()
     {
+        enemySpawner.backgroundMusic.mute = true;
+        dayMusic.Play();
         AllWaves = false;
         timeLeft = timeLeftForNight;
         myText.color = Color.white;
@@ -53,11 +60,18 @@ public class TimerForEnemySpawn : MonoBehaviour
                 day = false;
                 myText.color = Color.red;
                 timeLeft = 90;
+                trigger = true;
                 newWaves = true;
             }
         }
         else
         {
+            dayMusic.mute = true;
+            if (trigger)
+            {
+                nightMusic.Play();
+                trigger = false;
+            }
             if (newWaves)
             {
                 StartCoroutine(EnemySpawn());

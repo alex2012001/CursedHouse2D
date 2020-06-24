@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class PlayerCrystals : MonoBehaviour
 {
     public int count;
+
+    public bool coinSound = false;
+    public AudioSource coinPickup;
+    public AudioSource buildSound;
 
     private BuySpace buySpace;
     private bool buy = false;
@@ -32,8 +37,14 @@ public class PlayerCrystals : MonoBehaviour
 
     private void Update()
     {
+        if (coinSound)
+        {
+            coinPickup.Play();
+            coinSound = false;
+        }
         if(buy&&checkOnBuy&&count>=buySpace.cost)
         {
+            buildSound.mute = false;
             if (buySpace.progressBar != null)
             {
                 buySpace.progressBar.fillAmount = clickTime * 0.25f;
@@ -48,6 +59,10 @@ public class PlayerCrystals : MonoBehaviour
             {
                 buySpace.Build();
             }
+        }
+        else
+        {
+            buildSound.mute = true;
         }
         if (!checkOnBuy&&buy)
         {

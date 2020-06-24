@@ -48,7 +48,7 @@ public class MenuMenegment : MonoBehaviour
             SoundOff.SetActive(false);
             musicMixer.audioMixer.SetFloat("SoundVolume", 0);
         }
-        else if (PlayerPrefs.GetInt("MusicEnabled") == 2)
+        else if (PlayerPrefs.GetInt("SoundEnabled") == 2)
         {
             SoundOn.SetActive(false);
             SoundOff.SetActive(true);

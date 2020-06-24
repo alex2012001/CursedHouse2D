@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Audio;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -13,7 +13,9 @@ public class PlayerMove : MonoBehaviour
     public bool canMove;
     public int playerOnLadder = 0;
 
-    
+    public AudioSource jumpSound;
+    public AudioSource runSound;
+    public AudioSource damageSound;
 
     private Joystick joystick;
 
@@ -84,9 +86,11 @@ public class PlayerMove : MonoBehaviour
             if (joystick.Horizontal() >0.02)
             {
                 Anim.SetBool("Run", true);
+                runSound.mute = false;
             }
             else
             {
+                runSound.mute = true;
                 Anim.SetBool("Run", false);
             }
         }
@@ -106,6 +110,7 @@ public class PlayerMove : MonoBehaviour
             {
                 
                 Anim.SetBool("Jump", true);
+                jumpSound.Play();
                 rb.velocity = Vector2.up * verticalImpulse;
                 extraJumps--;
                 StartCoroutine(MyMethodForJump());
@@ -119,13 +124,9 @@ public class PlayerMove : MonoBehaviour
         {
             if (checkDamage)
             {
+                damageSound.Play();
                 checkDamage = false;
                 healthFill -= 0.25f;
-                //if (spriteRend == null)
-                //{
-                //    Debug.Log("AAAAAAAAAAAA");
-                //}
-                //spriteRend.color = new Color(255f, 255f, 255f, 0f);
                 StartCoroutine(Damage());
             }
         }

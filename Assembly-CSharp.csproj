@@ -86,6 +86,8 @@
     <Compile Include="Assets\Scripts\LevelMenu\LevelMenu.cs" />
     <Compile Include="Assets\Scripts\MainCamera.cs" />
     <Compile Include="Assets\Scripts\MenuMenegment.cs" />
+    <Compile Include="Assets\Scripts\Music and Sounds\MusicPanelOnLevelChoice.cs" />
+    <Compile Include="Assets\Scripts\Music and Sounds\PauseMenuMixer.cs" />
     <Compile Include="Assets\Scripts\PauseMenu\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Platform.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\Attack.cs" />

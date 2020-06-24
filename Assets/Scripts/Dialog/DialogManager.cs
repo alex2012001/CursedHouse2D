@@ -10,7 +10,7 @@ public class DialogManager : MonoBehaviour
 
     public Animator anim;
     public GameObject timer;
-
+    public GameObject button;
     private int kek;
 
     private Queue<string> sentances;
@@ -43,15 +43,14 @@ public class DialogManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+            button.SetActive(false);
         if(sentances.Count == 0)
         {
             EndDialog();
             return;
         }
-
         string sentence = sentances.Dequeue();
         StartCoroutine(TypeSentence(sentence));
-
     }
     
     IEnumerator TypeSentence(string sentence)
@@ -63,6 +62,9 @@ public class DialogManager : MonoBehaviour
             dialogText.text += letter;
             yield return null;
         }
+        button.SetActive(true);
+ 
+
     }
 
     public void EndDialog()

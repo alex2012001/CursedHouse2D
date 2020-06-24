@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\EnemiesManagement\TimerForEnemySpawn.cs" />
     <Compile Include="Assets\Scripts\EnemyPath\EnemyGFX.cs" />
     <Compile Include="Assets\Scripts\Ladder.cs" />
+    <Compile Include="Assets\Scripts\LevelMenu\CameraManager.cs" />
     <Compile Include="Assets\Scripts\LevelMenu\EndLevel.cs" />
     <Compile Include="Assets\Scripts\LevelMenu\LevelController.cs" />
     <Compile Include="Assets\Scripts\LevelMenu\LevelMenu.cs" />

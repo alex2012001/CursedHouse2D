@@ -25,7 +25,13 @@ public class PauseMenu : MonoBehaviour
     public void LoadMenu()
     {
         Time.timeScale = 1f;
-        Debug.Log("Load");
+        StartCoroutine(time());
+    }
+
+    IEnumerator time()
+    {
+        yield return new WaitForSeconds(0.3f);
         SceneManager.LoadScene(0);
+        yield return null;
     }
 }

@@ -38,13 +38,21 @@ public class LevelMenu : MonoBehaviour
 
         public void BackToMenu()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(time());
     }
 
     public void Managerr(int level)
     {
         loadingScreen.SetActive(true);
         StartCoroutine(LoadAsync(level));
+    }
+
+    IEnumerator time()
+    {
+        yield return new WaitForSeconds(0.3f);
+        SceneManager.LoadScene(0);
+        yield return null;
+
     }
 
     IEnumerator LoadAsync(int level)

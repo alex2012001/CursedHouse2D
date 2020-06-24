@@ -16,7 +16,7 @@ public class LevelController : MonoBehaviour
         {
             insctance = this;
         }
-        PlayerPrefs.SetInt("LevelComplete", 2); //убрать в финальном билде
+      //  PlayerPrefs.SetInt("LevelComplete", 0); //убрать в финальном билде
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         levelComplete = PlayerPrefs.GetInt("LevelComplete");
 

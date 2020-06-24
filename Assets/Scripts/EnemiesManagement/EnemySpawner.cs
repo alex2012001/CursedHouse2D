@@ -48,7 +48,10 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(3);
-        allDie = true;
+        if (enemyCount == 0)
+        {
+            allDie = true;
+        }
         yield return null;
     }
 

@@ -110,6 +110,7 @@
     <Compile Include="Assets\Scripts\Traps\SpikesTrap.cs" />
     <None Include="Assets\Sprites\LevelSprites\Балки крыши\about.txt" />
     <None Include="Assets\Sprites\LevelSprites\Земля\License.txt" />
+    <None Include="Assets\Music And Sounds\Music\Игровое поле\Horror Ambient Album - 060319\Notes.txt" />
     <None Include="Assets\Sprites\LevelSprites\Castle\about.txt" />
     <None Include="Assets\Sprites\Персонажи и кристаллы\Gothicvania Cemetery Artwork\about.txt" />
     <None Include="Assets\Sprites\LevelSprites\Земля\Font.txt" />

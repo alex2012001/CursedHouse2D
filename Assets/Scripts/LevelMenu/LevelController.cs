@@ -45,6 +45,7 @@ public class LevelController : MonoBehaviour
 
    void NextLevel()
     {
+        //StartCoroutine(LoadAsync());
         SceneManager.LoadScene(sceneIndex + 1);
     }
 
@@ -52,4 +53,21 @@ public class LevelController : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    //IEnumerator LoadAsync(int level)
+    //{
+    //    AsyncOperation asynkLoad = SceneManager.LoadSceneAsync(sceneIndex + 1);
+
+    //    asynkLoad.allowSceneActivation = false;
+
+    //    while (!asynkLoad.isDone)
+    //    {
+    //        loadBar.value = asynkLoad.progress;
+    //        if (asynkLoad.progress >= .9f && !asynkLoad.allowSceneActivation)
+    //        {
+    //            asynkLoad.allowSceneActivation = true;
+    //        }
+    //        yield return null;
+    //    }
+    //}
 }

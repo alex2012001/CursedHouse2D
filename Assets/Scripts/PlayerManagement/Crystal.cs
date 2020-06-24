@@ -15,6 +15,7 @@ public class Crystal : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            playerCrystals.coinSound = true;
             playerCrystals.count++;
             Destroy(gameObject);
         }

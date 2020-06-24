@@ -28,7 +28,7 @@ public class MusicPanelOnLevelChoice : MonoBehaviour
         {
             soundMixer.audioMixer.SetFloat("SoundVolume", 0);
         }
-        else if (PlayerPrefs.GetInt("MusicEnabled") == 2)
+        else if (PlayerPrefs.GetInt("SoundEnabled") == 2)
         {
             soundMixer.audioMixer.SetFloat("SoundVolume", -80);
         }

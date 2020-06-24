@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 
 public class Attack : MonoBehaviour
 {
+    public AudioSource attackSound;
+
     private float timeBtwAttack;
     public float startTimeBtwAttack;
     private bool check = false;
@@ -51,6 +54,7 @@ public class Attack : MonoBehaviour
         check = true;
         if(checkAnim)
         {
+            attackSound.Play();
             Anim.SetBool("Atack", true);
             StartCoroutine(MyMethodForAtack());
         }

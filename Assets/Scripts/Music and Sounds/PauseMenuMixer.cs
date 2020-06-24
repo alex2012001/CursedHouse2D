@@ -19,28 +19,43 @@ public class PauseMenuMixer : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("MusicEnabled") == 1)
         {
+            MusicOn.SetActive(true);
+            MusicOff.SetActive(false);
             musicMixer.audioMixer.SetFloat("MusicVolume", 0);
         }
         else if (PlayerPrefs.GetInt("MusicEnabled") == 2)
         {
+            MusicOn.SetActive(false);
+            MusicOff.SetActive(true);
             musicMixer.audioMixer.SetFloat("MusicVolume", -80);
         }
         else
         {
+            MusicOn.SetActive(true);
+            MusicOff.SetActive(false);
             musicMixer.audioMixer.SetFloat("MusicVolume", 0);
         }
 
         if (PlayerPrefs.GetInt("SoundEnabled") == 1)
         {
-            soundMixer.audioMixer.SetFloat("SoundVolume", 0);
+            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            SoundOn.SetActive(true);
+            SoundOff.SetActive(false);
+            musicMixer.audioMixer.SetFloat("SoundVolume", 0);
         }
-        else if (PlayerPrefs.GetInt("MusicEnabled") == 2)
+        else if (PlayerPrefs.GetInt("SoundEnabled") == 2)
         {
-            soundMixer.audioMixer.SetFloat("SoundVolume", -80);
+            Debug.Log("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
+            SoundOn.SetActive(false);
+            SoundOff.SetActive(true);
+            musicMixer.audioMixer.SetFloat("SoundVolume", -80);
         }
         else
         {
-            soundMixer.audioMixer.SetFloat("SoundVolume", 0);
+            Debug.Log("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
+            SoundOn.SetActive(true);
+            SoundOff.SetActive(false);
+            musicMixer.audioMixer.SetFloat("SoundVolume", 0);
         }
     }
 
@@ -51,7 +66,6 @@ public class PauseMenuMixer : MonoBehaviour
 
     public void MusicOnBtn()
     {
-        buttonClick.Play();
         MusicOff.SetActive(true);
         PlayerPrefs.SetInt("MusicEnabled", 2);
         musicMixer.audioMixer.SetFloat("MusicVolume", -80);
@@ -60,7 +74,6 @@ public class PauseMenuMixer : MonoBehaviour
 
     public void MusicOffBtn()
     {
-        buttonClick.Play();
         PlayerPrefs.SetInt("MusicEnabled", 1);
         MusicOff.SetActive(false);
         musicMixer.audioMixer.SetFloat("MusicVolume", 0);
@@ -70,7 +83,6 @@ public class PauseMenuMixer : MonoBehaviour
 
     public void SoundOnBtn()
     {
-        buttonClick.Play();
         PlayerPrefs.SetInt("SoundEnabled", 2);
         SoundOff.SetActive(true);
         musicMixer.audioMixer.SetFloat("SoundVolume", -80);
@@ -79,7 +91,6 @@ public class PauseMenuMixer : MonoBehaviour
 
     public void SoundOffBtn()
     {
-        buttonClick.Play();
         PlayerPrefs.SetInt("SoundEnabled", 1);
         SoundOff.SetActive(false);
         musicMixer.audioMixer.SetFloat("SoundVolume", 0);

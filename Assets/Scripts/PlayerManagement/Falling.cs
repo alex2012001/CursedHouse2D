@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class Falling : MonoBehaviour
 {
+    public AudioSource stunSound;
 
     public GameObject rightStunText;
 
@@ -25,10 +27,12 @@ public class Falling : MonoBehaviour
 
             if (collision.gameObject.tag.Equals("Ground") && pl.rb.velocity.y < -5)
             {
+                stunSound.Play();
                 StartCoroutine(Stun());
             }
             if (collision.gameObject.tag.Equals("Ground") && pl.rb.velocity.y < -7.5)
             {
+                pl.damageSound.Play();
                 pl.healthFill -= 0.25f;
             }
             if (collision.gameObject.tag.Equals("Ground") && pl.rb.velocity.y < -10)

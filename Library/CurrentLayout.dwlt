@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 334, y: 274}
   m_MaxSize: {x: 14004, y: 10024}
   vertical: 0
-  controlID: 38
+  controlID: 117
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 498}
   m_MaxSize: {x: 18006, y: 14048}
   vertical: 1
-  controlID: 121
+  controlID: 160
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 498}
   m_MaxSize: {x: 18006, y: 14048}
   vertical: 0
-  controlID: 122
+  controlID: 161
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 498}
   m_MaxSize: {x: 14004, y: 14048}
   vertical: 1
-  controlID: 72
+  controlID: 37
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 73
+  controlID: 38
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -507,20 +507,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 51
   m_LastFolders:
-  - Assets/Sprites
+  - Assets/Scenes
   m_LastFoldersGridSize: 51
-  m_LastProjectPath: C:\Users\elite\Documents\GitHub\Prototype
+  m_LastProjectPath: J:\github\Prototype
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 420}
-    m_SelectedIDs: 069f0000
-    m_LastClickedID: 40710
-    m_ExpandedIDs: 000000000695000074950000789500004c9600008c970000c4970000e6980000b09b0000f69e0000069f0000949f00000ca10000faa100001aa2000000ca9a3b
+    scrollPos: {x: 0, y: 137}
+    m_SelectedIDs: 40990000
+    m_LastClickedID: 39232
+    m_ExpandedIDs: 000000000695000074950000789500004c9600008c970000c4970000e6980000b09b0000f69e0000069f0000949f000016a1000004a2000024a20000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -548,7 +548,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000695000074950000789500004c9600008c970000c4970000e6980000b09b0000f69e0000069f0000949f00000ca10000faa100001aa20000
+    m_ExpandedIDs: 000000000695000074950000789500004c9600008c970000c4970000e6980000b09b0000f69e0000069f0000949f000016a1000004a2000024a20000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -579,18 +579,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 0000000014d3ffff
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Enemy
+      m_OriginalName: Enemy
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 38448
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 2}
     m_CreateAssetUtility:
@@ -600,7 +600,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 162}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 51
   m_DirectoriesAreaWidth: 161
 --- !u!114 &17
@@ -657,12 +657,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 720
-    width: 1019
+    width: 900
     height: 280
   m_PersistentViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 67224
+  m_LastSelectedObjectID: 275856
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -851,20 +851,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6a12ffff
-      m_LastClickedID: -60822
-      m_ExpandedIDs: 7239ffff083effff46af0000
+      m_SelectedIDs: 169f0500
+      m_LastClickedID: 368406
+      m_ExpandedIDs: d489f1ff789cf1ff849cf1ffd0d4f1fffed4f1ff16d5f1ff98d7f1ff9cd7f1ffa0d7f1ffa6d7f1ffaed7f1ffb6d7f1ff30e8f1ff88eaf1ff7cf7f1ff74fef1ffa800f2ff1a04f2ff7a07f2ffa807f2ffc007f2ff460af2ff4e0af2ff560af2ff600af2ff6c0af2ff780af2ff2a39ffff3c39ffffc239ffffc23affff303effffbeb3000050b70000ceb700004eb90000b8b90000182e05008e680500
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Button12
-        m_OriginalName: Button12
+        m_Name: StartCrystals
+        m_OriginalName: StartCrystals
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -59808
+        m_UserData: 355738
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -909,9 +909,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 8.06307, y: 8.9818, z: -0.1953125}
+    m_Target: {x: -15.032028, y: -5.359219, z: -3.1640625}
     speed: 2
-    m_Value: {x: 8.06307, y: 8.9818, z: -0.1953125}
+    m_Value: {x: -15.032028, y: -5.359219, z: -3.1640625}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -943,9 +943,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 40.538563
+    m_Target: 38.50596
     speed: 2
-    m_Value: 40.538563
+    m_Value: 38.50596
   m_Ortho:
     m_Target: 1
     speed: 2

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class FollowPath : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class FollowPath : MonoBehaviour
         Moveing,
         Lerping
     }
+
+    public AudioSource alertSound;
 
     private bool alertIsActive = false;
     public GameObject alert;
@@ -110,6 +113,7 @@ public class FollowPath : MonoBehaviour
             path.canMove = true;
             if (!alertIsActive)
             {
+                alertSound.Play();
                 alertIsActive = true;
                 StartCoroutine(Alert());
             }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class EnemySpawner : MonoBehaviour
 
     public Transform[] SpawnpointsForFlying;
     public Transform[] SpawnpointsForWalking;
+
+    public AudioSource backgroundMusic;
 
     int[] waves = new int[3];
     private int waveNumber = 1;

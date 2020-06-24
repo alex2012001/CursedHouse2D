@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class SpikesTrap : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class SpikesTrap : MonoBehaviour
     private float gameTime;
     public Image reloadProgress;
 
+    public AudioSource spikeSound;
 
     public GameObject needToReload;
 
@@ -97,7 +99,9 @@ public class SpikesTrap : MonoBehaviour
     IEnumerator SpikeDamage()
     {
         anim.SetInteger("trap", 1);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
+        spikeSound.Play();
+        yield return new WaitForSeconds(0.3f);
         if (enemyHp != null)
         {
             enemyHp.hp -= damage;

@@ -68,6 +68,14 @@ public class PlayerCrystals : MonoBehaviour
                 buySpace.Build();
             }
         }
+
+        if (buySpace != null)
+        {
+            if (buySpace.isBuild)
+            {
+                buildSound.mute = true;
+            }
+        }
         if (!checkOnBuy&&buy)
         {
             clickTime = 0;

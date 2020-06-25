@@ -11,6 +11,8 @@ public class Ladder : MonoBehaviour
     private bool inLadder = false;
     private PlayerMove plMove;
 
+    public AudioSource ladderSound;
+
     private void Start()
     {
         plMove = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>();
@@ -23,14 +25,17 @@ public class Ladder : MonoBehaviour
         {
             if (plMove.playerOnLadder == 1)
             {
+                ladderSound.mute = false;
                     collision2D.GetComponent<Rigidbody2D>().velocity = new Vector2(0, speed);
             }
             else if (plMove.playerOnLadder ==-1)
             {
-                    collision2D.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -speed);
+                ladderSound.mute = false;
+                collision2D.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -speed);
             }
             else if(plMove.playerOnLadder==0)
             {
+                ladderSound.mute = true;
                 collision2D.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             }
 
@@ -44,35 +49,12 @@ public class Ladder : MonoBehaviour
             collision.GetComponent<Rigidbody2D>().gravityScale = 0;
             inLadder = true;
         }
-        //if (collision.gameObject.tag == "Player")
-        //{
-        //    collision.GetComponent<Rigidbody2D>().gravityScale = 0;
-        //    if (collision.gameObject.CompareTag("Player"))
-        //    {
-        //        if (Input.GetKey(KeyCode.R))
-        //        {
-        //            if (Input.GetKey(KeyCode.R))
-        //                Debug.Log("***");
-        //            collision.GetComponent<Rigidbody2D>().velocity = new Vector2(0, speed);
-        //        }
-        //        else if (Input.GetKey(KeyCode.T))
-        //        {
-        //            if (Input.GetKey(KeyCode.T))
-        //                Debug.Log("***");
-        //            collision.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -speed);
-        //        }
-        //        else
-        //        {
-        //            collision.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-        //        }
-        //    }
-        //}
-
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
+            ladderSound.mute = true;
             collision.GetComponent<Rigidbody2D>().gravityScale = 1;
             inLadder = false;
         }

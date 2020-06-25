@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.Audio;
 public class BladeSpawnTrap : MonoBehaviour
 {
+    public AudioSource bladeSound;
+    public AudioSource buildSound;
+   // public AudioSource 
+
     public GameObject blade;
     public bool isReload = true;
     public Transform moveingTo;
@@ -43,6 +47,7 @@ public class BladeSpawnTrap : MonoBehaviour
         {
             if(playerCrystals.checkOnBuy&&!isReload)
             {
+                buildSound.mute = false;
                 reloadProgress.fillAmount = clickForReloadTime * 0.33f;
                 gameTime += 1 * Time.deltaTime;
                 if (gameTime >= 1)
@@ -55,8 +60,10 @@ public class BladeSpawnTrap : MonoBehaviour
                     Reload();
                 }
             }
-            if (!playerCrystals.checkOnBuy)
+           else
             {
+                buildSound.mute = true;
+                clickForReloadTime = 0;
                 reloadProgress.fillAmount = 0f;
             }
         }

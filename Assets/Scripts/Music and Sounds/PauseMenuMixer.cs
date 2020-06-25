@@ -38,21 +38,18 @@ public class PauseMenuMixer : MonoBehaviour
 
         if (PlayerPrefs.GetInt("SoundEnabled") == 1)
         {
-            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             SoundOn.SetActive(true);
             SoundOff.SetActive(false);
             musicMixer.audioMixer.SetFloat("SoundVolume", 0);
         }
         else if (PlayerPrefs.GetInt("SoundEnabled") == 2)
         {
-            Debug.Log("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
             SoundOn.SetActive(false);
             SoundOff.SetActive(true);
             musicMixer.audioMixer.SetFloat("SoundVolume", -80);
         }
         else
         {
-            Debug.Log("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
             SoundOn.SetActive(true);
             SoundOff.SetActive(false);
             musicMixer.audioMixer.SetFloat("SoundVolume", 0);

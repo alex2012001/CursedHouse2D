@@ -23,6 +23,8 @@ public class SpikesTrap : MonoBehaviour
 
     private Animator anim;
 
+    public AudioSource buildSound;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -60,6 +62,7 @@ public class SpikesTrap : MonoBehaviour
         {
             if (!isActive && playerCrystals.checkOnBuy)
             {
+                buildSound.mute = false;
                 reloadProgress.fillAmount = clickForReloadTime * 0.33f;
                 gameTime += 1 * Time.deltaTime;
                 if (gameTime >= 1)
@@ -72,8 +75,10 @@ public class SpikesTrap : MonoBehaviour
                     Reload();
                 }
             }
-            if (!playerCrystals.checkOnBuy)
+            else
             {
+                buildSound.mute = true;
+                clickForReloadTime = 0;
                 reloadProgress.fillAmount = 0f;
             }
         }

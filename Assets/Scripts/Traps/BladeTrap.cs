@@ -1,14 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class BladeTrap : MonoBehaviour
 {
     private BladeSpawnTrap spawn;
     private EnemyHealthPoints enemyHp;
 
-    public AudioSource bladeSound;
 
     public float damage;
 
@@ -24,7 +22,7 @@ public class BladeTrap : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy" && collision.isTrigger == false||collision.gameObject.tag=="FlyingEnemy"&&collision.isTrigger==false)
         {
-            bladeSound.Play();
+            spawn.bladeSound.Play();
             enemyHp = collision.gameObject.GetComponent<EnemyHealthPoints>();
             StartCoroutine(TakeDamage());
             move = true;

@@ -96,6 +96,7 @@ public class PlayerMove : MonoBehaviour
         }
         if (!canMove)
         {
+            runSound.mute = true;
             Anim.SetBool("Run", false);
         }
     }

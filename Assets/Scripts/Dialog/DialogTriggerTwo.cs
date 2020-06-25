@@ -14,7 +14,7 @@ public class DialogTriggerTwo : MonoBehaviour
     }
     private void Update()
     {
-        if(cr.countForTrigger == 3 && check == false)
+        if(cr.countForTrigger == 2 && check == false)
         {
             TriggerDialog();
             check = true;

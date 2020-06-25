@@ -13,10 +13,14 @@ public class BuySpace : MonoBehaviour
     public GameObject ghost;
 
 
-    private bool isBuild = false;
+    public bool isBuild;
     public int buildTime = 4;
     public Image progressBar;
 
+    private void Start()
+    {
+        isBuild = false;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

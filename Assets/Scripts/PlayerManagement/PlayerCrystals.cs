@@ -17,6 +17,7 @@ public class PlayerCrystals : MonoBehaviour
     public bool checkOnBuy = false;
     private float gameTime;
     private int clickTime=0;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "BuySpace")
@@ -44,7 +45,14 @@ public class PlayerCrystals : MonoBehaviour
         }
         if(buy&&checkOnBuy&&count>=buySpace.cost)
         {
-            buildSound.mute = false;
+            if (buySpace.isBuild==false)
+            {
+                buildSound.mute = false;
+            }
+            else
+            {
+                buildSound.mute = true;
+            }
             if (buySpace.progressBar != null)
             {
                 buySpace.progressBar.fillAmount = clickTime * 0.25f;
@@ -59,10 +67,6 @@ public class PlayerCrystals : MonoBehaviour
             {
                 buySpace.Build();
             }
-        }
-        else
-        {
-            buildSound.mute = true;
         }
         if (!checkOnBuy&&buy)
         {

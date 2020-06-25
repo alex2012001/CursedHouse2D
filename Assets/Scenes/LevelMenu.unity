@@ -3504,8 +3504,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lvl2: {fileID: 517416186}
   Lvl3: {fileID: 46418680}
+  Lvl4: {fileID: 799760774}
+  Lvl5: {fileID: 871436447}
+  Lvl6: {fileID: 55234451}
+  Lvl7: {fileID: 905671850}
+  Lvl8: {fileID: 1561433992}
+  Lvl9: {fileID: 26728737}
+  Lvl10: {fileID: 1246434431}
+  Lvl11: {fileID: 1709646365}
+  Lvl12: {fileID: 1477071240}
+  Lvl13: {fileID: 1993580228}
+  Lvl14: {fileID: 613408778}
+  Lvl15: {fileID: 1482353752}
   loadingScreen: {fileID: 334731498}
   loadBar: {fileID: 1399613095}
+  text: {fileID: 846376887}
+  button: {fileID: 2131728843}
 --- !u!4 &1519298038
 Transform:
   m_ObjectHideFlags: 0

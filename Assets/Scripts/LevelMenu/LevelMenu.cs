@@ -51,21 +51,10 @@ public class LevelMenu : MonoBehaviour
         {
             case 1:
                 Lvl2.interactable = true;
-                Lvl3.interactable = true;
+               // Lvl3.interactable = true;
                 break;
-            //case 2:
-            //    Lvl2.interactable = true;
-            //    Lvl3.interactable = true;          
-            //    break;
-           
         }
     }
-
-    //public void LoadTo(int level)
-    //{
-    //    SceneManager.LoadScene(level);
-    //}
-
         public void BackToMenu()
     {
         StartCoroutine(time());

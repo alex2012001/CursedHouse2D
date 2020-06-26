@@ -6,6 +6,8 @@ using UnityEngine.Audio;
 
 public class Attack : MonoBehaviour
 {
+    private bool sound=  true;
+
     public AudioSource attackSound;
 
     private float timeBtwAttack;
@@ -52,11 +54,18 @@ public class Attack : MonoBehaviour
     public void AttackButtonDown()
     {
         check = true;
-        if(checkAnim)
+        if(checkAnim&&check)
         {
-            attackSound.Play();
+            checkAnim = false;
             Anim.SetBool("Atack", true);
             StartCoroutine(MyMethodForAtack());
+            if (sound)
+            {
+                sound = false;
+                attackSound.Play();
+                StartCoroutine(forSound());
+            }
+         
         }
        
     }
@@ -69,10 +78,17 @@ public class Attack : MonoBehaviour
 
     IEnumerator MyMethodForAtack()
     {
-        checkAnim = false;
         yield return new WaitForSeconds(0.2f);
         Anim.SetBool("Atack", false);
         yield return new WaitForSeconds(0.2f);
         checkAnim = true;
     }
+
+    IEnumerator forSound()
+    {
+        yield return new WaitForSeconds(0.8f);
+        sound = true;
+        yield return null;
+    }
+
 }

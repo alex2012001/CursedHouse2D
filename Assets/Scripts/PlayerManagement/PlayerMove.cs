@@ -10,6 +10,8 @@ public class PlayerMove : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    private bool inJump= false;
+
     public bool canMove;
     public int playerOnLadder = 0;
 
@@ -83,7 +85,7 @@ public class PlayerMove : MonoBehaviour
 
             }
 
-            if (joystick.Horizontal() >0.02)
+            if (joystick.Horizontal() >0.02&&!inJump)
             {
                 Anim.SetBool("Run", true);
                 runSound.mute = false;
@@ -109,7 +111,7 @@ public class PlayerMove : MonoBehaviour
             }
             if (extraJumps > 0) // Имитация прыжка персонажа при помощи импульса направленного вверх
             {
-                
+                inJump = true;
                 Anim.SetBool("Jump", true);
                 jumpSound.Play();
                 rb.velocity = Vector2.up * verticalImpulse;
@@ -162,6 +164,8 @@ public class PlayerMove : MonoBehaviour
       
         yield return new WaitForSeconds(0.2f);
         Anim.SetBool("Jump", false);
+        yield return new WaitForSeconds(0.5f);
+        inJump = false;
 
     }
 

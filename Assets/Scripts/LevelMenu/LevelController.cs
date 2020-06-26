@@ -16,12 +16,8 @@ public class LevelController : MonoBehaviour
         {
             insctance = this;
         }
-      //  PlayerPrefs.SetInt("LevelComplete", 0); //убрать в финальном билде
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         levelComplete = PlayerPrefs.GetInt("LevelComplete");
-
-        Debug.Log(levelComplete);
-        Debug.Log(sceneIndex);
     }
 
    
@@ -29,18 +25,18 @@ public class LevelController : MonoBehaviour
     {
       
 
-        if (sceneIndex == 5)
-        {
-            Invoke("LoadMainMenu", 1f);
-        }
-        else
-        {
+        //if (sceneIndex == 5)
+        //{
+        //    Invoke("LoadMainMenu", 1f);
+        //}
+        //else
+        //{
             if(levelComplete < sceneIndex)
             {
                 PlayerPrefs.SetInt("LevelComplete", sceneIndex);
                 NextLevel();
             }
-        }
+        //}
     }
 
    void NextLevel()

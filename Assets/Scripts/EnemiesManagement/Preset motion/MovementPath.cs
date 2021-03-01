@@ -21,7 +21,7 @@ public class MovementPath : MonoBehaviour
     private void Awake()
     {
 
-        quantityPoitns = transform.parent.parent.GetChildCount();
+        quantityPoitns = transform.parent.parent.childCount;
         Array.Resize<Transform>(ref PathElements, quantityPoitns);
         for (int i = 0; i < quantityPoitns; i++)
         {
